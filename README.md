@@ -26,7 +26,7 @@ A themed AI-powered chatbot that responds in the style of Ladybug from Miraculou
 ### Setup
 
 1. Clone the repository
-   git clone https://github.com/AmnaaKhan1/your-repo-name.git
+   git clone hgit clone https://github.com/AmnaaKhan1/BootCamp-Project.git
 
 2. Open script.js and replace the API key placeholder with your own key
    const API_KEY = 'YOUR_API_KEY_HERE';
