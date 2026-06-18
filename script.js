@@ -1,5 +1,6 @@
-const API_KEY = 'AIzaSyCBo9vMXRwX8gOFePU3CE_-gtpt9R5j9Do'; 
-const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+const API_KEY = 'YOUR_API_KEY_HERE';
+const API_URL = 'https://generativelanguage.googleapis.com';
+
 
 const chatMessages = document.getElementById('chat-messages');
 const userInput = document.getElementById('user-input');
@@ -78,12 +79,16 @@ async function handleUserInput() {
         sendButton.disabled = true;
         userInput.disabled = true;
 
-        const botReply = await generateResponse(userMessage);
-        addMessage(cleanMarkdown(botReply), false);
-
-        sendButton.disabled = false;
-        userInput.disabled = false;
-        userInput.focus();
+        try {
+            const botReply = await generateResponse(userMessage);
+            addMessage(cleanMarkdown(botReply), false);
+        } catch (error) {
+            addMessage("Oops! Something went wrong. Try again.", false);
+        } finally {
+            sendButton.disabled = false;
+            userInput.disabled = false;
+            userInput.focus();
+        }
     }
 }
 
